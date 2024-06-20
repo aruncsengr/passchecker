@@ -6,7 +6,7 @@ An online portal to validate passwords.
 * [Technologies Used](#technologies-used)
 * [Setup](#setup)
 * [Usage](#usage)
-* [Automated test runner](#automated-test-runners)
+* [Automated test runner](#automated-test-runner)
 
 ## General Information
 Passchecker is an online platform to perform password validations by bulk user data import.
