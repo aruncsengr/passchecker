@@ -15,7 +15,7 @@ RSpec.describe "Users", type: :request do
         post '/users/import'
 
         expect(response).to have_http_status(302)
-        expect(response).to redirect_to(users_url)
+        expect(response).to redirect_to(root_url)
         expect(flash[:notice]).to eq 'No file added.'
       end
     end
@@ -27,7 +27,7 @@ RSpec.describe "Users", type: :request do
         }
 
         expect(response).to have_http_status(302)
-        expect(response).to redirect_to(users_url)
+        expect(response).to redirect_to(root_url)
         expect(flash[:notice]).to eq 'Only CSV files allowed.'
       end
     end
