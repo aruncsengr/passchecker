@@ -1,0 +1,6 @@
+<h3> Import users in CSV</h3>
+
+<%= form_tag import_users_path, method: :post, multipart: true do %>
+  <%= file_field_tag :file, accept: ".csv" %>
+  <%= submit_tag 'Import' %>
+<% end %>
