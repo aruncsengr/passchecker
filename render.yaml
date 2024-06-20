@@ -8,7 +8,9 @@ databases:
 services:
   - type: web
     name: passchecker
+    repo: https://github.com/aruncsengr/passchecker
     region: frankfurt
+    healthCheckPath: /
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
