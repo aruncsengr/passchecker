@@ -35,7 +35,13 @@ RSpec.describe "Users", type: :request do
     context 'with valid file' do
       let(:csv_file) { Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/users.csv", 'text/csv') }
 
+      before do
+        allow(ActionDispatch::Http::UploadedFile).to receive(:new).and_return(csv_file)
+      end
+
       it "returns http status - success" do
+        file = Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/users.csv", 'text/csv')
+        expect_any_instance_of(CsvImportUsersService).to receive(:call).once.with(csv_file)
         post '/users/import', params: { file: csv_file }
 
         expect(response).to have_http_status(:success)
