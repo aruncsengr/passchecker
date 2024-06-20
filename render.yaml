@@ -1,5 +1,6 @@
 databases:
   - name: passchecker
+    region: frankfurt
     databaseName: passchecker
     user: passchecker
     plan: free
@@ -7,6 +8,7 @@ databases:
 services:
   - type: web
     name: passchecker
+    region: frankfurt
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
